@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Pastillero" />
+  
+  <title>Pastillero</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-section">
+      <h1>💊 Pastillero.App</h1>
+      <div class="wallpaper-controls">
+        <button type="button" id="notificationBtn" class="notification-btn" style="display:none;">🔔</button>
+        <label for="wallpaper" class="wallpaper-label">🎨 Fondo</label>
+        <input type="file" id="wallpaper" accept="image/*" />
+        <button type="button" id="resetWallpaper" class="reset-btn">↻</button>
+      </div>
+    </div>
+
+    <form id="form">
+      <input type="text" id="nombre" placeholder="Medicamento" required />
+      <input type="text" id="dosis" placeholder="Dosis (ej: 500mg)" required />
+      <select id="metodo" required>
+        <option value="">Seleccionar método</option>
+        <option value="Oral">Oral</option>
+        <option value="En ayunas">En ayunas</option>
+        <option value="Luego de ingerir alimento">Luego de ingerir alimento</option> 
+        <option value="Inyectable">Inyectable</option>
+        <option value="Oftálmico">Oftálmico</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <input type="date" id="fecha" required />
+      <input type="time" id="hora" required />
+      <button type="submit">Agregar</button>
+    </form>
+
+    <button type="button" id="calendarBtn" class="calendar-btn">📅 Ver Calendario</button>
+
+    <ul id="lista"></ul>
+  </div>
+
+  <!-- Modal del Calendario -->
+  <div id="calendarModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Calendario de Medicamentos</h2>
+        <button type="button" id="closeCalendar" class="close-btn">✕</button>
+      </div>
+      <div id="calendarView" class="calendar-view"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
